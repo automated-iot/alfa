@@ -1,11 +1,14 @@
+#include <Arduino.h>
 #include "TouchSwitch.h"
 
-TouchSwitch mySwitch(4, 13, 12); // touch sensor on pin 4, LED on pin 13, relay on pin 12
+// Example: touchPin = T0 (GPIO4), ledPin = 13, relayPin = 12
+TouchSwitch mySwitch(T0, 13, 12);
 
 void setup() {
-  mySwitch.begin(); // to start the myswitch class
+  mySwitch.begin();
 }
 
 void loop() {
-  mySwitch.update(); // to update the state saved in lastState var **REM
+  mySwitch.update();
+  // No delay! Keeps the loop fast and responsive.
 }
